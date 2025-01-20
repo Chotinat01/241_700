@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .test {
+            color: red; /*ใส่สีที่ตัวข้อความ*/
+        }
+
+        .test::first-letter { /*ใส่คำสั่งที่ตัวอักษรข้างหน้าตัวแรก*/
+            color: blue;
+            font-size: 40px;
+        }
+
+        .test::before { /*เขียนไว้ตัวแรกสุด*/
+            content: '?'; /*เขียน?*/
+        }
+
+        .test::after { /*เขียนไว้ตัวท้ายสุด*/
+            content: '!!!';
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="test">TestToma</div>
+   
+</body>
+</html>

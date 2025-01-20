@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        ul {    /*สร้างรายการแบบไม่เรียงลำดับ รายการต่างๆ ที่อยู่ภายใน <ul> แสดงเป็นจุด (bullet points) หรือสัญลักษณ์อื่นๆ */
+            list-style-type: none;  /* ไม่แสดงสัญลักษณ์ของรายการ */
+            margin: 0;
+            padding: 0;
+        }
+
+        /*Desktop*/
+
+        .desktop ul {
+            display: flex;
+        }
+        .desktop ul > li {
+            margin-right: 20px;  /*ระยะห่างระหว่างรายการจากขวา*/
+        }
+        .mobile {
+            display: none;
+        }
+        @media screen and (max-width: 768px) {
+            .desktop {
+                display: none;
+            }
+            /*.mobile {
+                display: block;
+            }*/
+            .mobile-menu {
+                display: block;
+            }
+            .mobile-menu:hover + .mobile { /*พอเอาเม้าไปชี้ จะแสดงข้อความของmobileจากบรรทัด55*/
+                display: block;
+            }
+        }
+        
+    </style>
+
+</head>
+
+<body>
+   <div class="desktop">
+    <ul> 
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
+   </div>
+
+    <div class="mobile-menu">Menu</div>
+    <div class="mobile">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+
+    </div>
+</body>
+
+</html>

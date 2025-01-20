@@ -1,0 +1,70 @@
+/* ส่วนนี้ CSS */
+/* ใช้สำหรับแต่ง (id class) */
+@font-face {
+    font-family: 'Kanit';
+    src: url(./Kanit/Kanit-Regular.ttf);
+}
+
+body {
+    font-family: 'Kanit';
+}
+
+.container {
+    width: 400px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: azure;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.header {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header-form {
+    width: 100px;
+}
+
+.flex {
+    display: flex;
+}
+
+.form-input {
+    margin-bottom: 10px;
+}
+
+.input.form, textarea {
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.center {
+    text-align: center;
+}
+
+.buttom {
+    border: 0;
+    width: 100%;
+    height: 40px;
+}
+
+.buttom:hover {
+    background-color: yellow;
+}
+
+@media screen and (max-width: 762px) {
+    .flex {
+        flex-direction: column;
+    }
+    .header {
+        font-size: 24px;
+    }
+    .buttom {
+        width: 100%;
+    }
+    
+}

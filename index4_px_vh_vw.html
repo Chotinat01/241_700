@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <!-- form-->
+
+    <div class="container">
+        <div id="register">
+            <div class="header">
+                Register form
+            </div>
+        </div>
+        <div class="flex form-input">
+            <div class="header-form">ชื่อ</div>
+            <input class="form" type="text">
+        </div>
+
+        <div class="flex form-input">
+            <div class="header-form">นามสกุล</div>
+            <input class="form" type="text"> <br>
+        </div>
+
+        <div class="flex form-input"> 
+            <div class="header-form">อายุ</div>
+            <input class="form" type="number" min="0" max="100">
+        </div>
+        
+        <div class="flex gender form-input">
+            <div class="header-form">เพศ</div>
+            <div class="flex">
+                <div>
+                    <input name="gender" type="radio"> ชาย
+                </div>
+                <div>
+                    <input name="gender" type="radio"> หญิง
+                </div>
+            
+                <div>
+                    <input name="gender" type="radio"> อื่นๆ
+                </div>
+            </div>
+        </div>
+
+        <div class="form-input">
+            งานอดิเรก
+            <div>
+                <input name="hobby" type="checkbox"> อ่านหนังสือ
+            </div>
+            <div>
+                <input name="hobby" type="checkbox"> ดูหนัง
+            </div>
+            <div>
+                <input name="hobby" type="checkbox"> ฟังเพลง
+            </div>
+        </div>
+
+        <div class="form-input">
+            คำอธิบาย
+            <textarea></textarea>
+        </div>
+
+        <div class="center">
+            <button class="buttom">ส่งข่อมูล</button>
+        </div>
+    </div>
+    
+
+  
+</body>
+</html>
