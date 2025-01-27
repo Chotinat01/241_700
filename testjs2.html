@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+</head>
+<body> 
+    <div>Hello World</div>
+    ความสนใจ
+    <input type="checkbox" name="interest" value="อ่านหนังสือ"> อ่านหนังสือ
+    <input type="checkbox" name="interest" value="ดูหนัง"> ดูหนัง
+    <input type="checkbox" name="interest" value="เล่นเกมส์"> เล่นเกมส์
+    <script>
+
+        /*ชื่อ<input  ไว้นอก script
+            type= "text" 
+            name= "firstname" 
+            value= "JOO">*/
+        /*let firstnameDOM = document.querySelector('#firstname'); ใช้ได้เหมือนตัวล่าง*/
+        /*let inputsDOM = document.querySelectorAll('.input');
+        for (let i = 0; i < inputsDOM.length; i++) {
+            console.log(inputsDOM[i].value);
+        }*/
+        /*.querySelector เลือกทั้งหมด*/
+        /*let firstnameDOM = document.querySelector('input[name="firstname"]');  /id = "firstname" class= "input" ใน ชื่อ บรรทัด10
+        console.log(firstnameDOM.value);*/
+
+        let checkboxInputs = document.querySelectorAll('input[name="interest"]');
+            for (let i = 0; i < checkboxInputs.length; i++) {
+                console.log(checkboxInputs[i].value);
+        };
+
+    </script>
+</body>
+</html>
