@@ -17,14 +17,75 @@ server.listen(port, host, () => {
 */
 const express = require('express');
 const app = express();
+<<<<<<< HEAD
 const bodyParser = require('body-parser');
 
+=======
+const mysql = require('mysql');
+const bodyParser = require('body-parser');
+>>>>>>> afcc38b (update docker)
 const port = 8000;
 
 app.use(bodyParser.json());
 
 let users = [];
+<<<<<<< HEAD
 let counter = 1;
+=======
+//let counter = 1;
+
+let conn = null;
+
+const initMysql = async () => {
+   conn = await mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: 'root',
+        database: 'webdb',
+        port: 8820
+    })
+}
+/*
+app.get('/testdb', (req, res) => {
+    mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: '1234',
+        database: 'tset',
+        port: 8830
+    }).then((conn) => {
+        conn
+        .query('SELECT * FROM users')
+        .then((result) => {
+            res.json(result[0]);
+        })
+        .catch((error) => {
+            console.log('error', error.message);
+            res.status(500).json({error: 'Error fetching users'});
+        })
+    })
+});*/
+
+/*
+app.get('/testdbnew', (req, res) => {
+    try{
+        const conn = await mysql.createConnection({
+            host: 'localhost',
+            user: 'root',
+            database: 'webdb',
+            port: 8830
+        })
+        const result = await conn.query('SELECT * FROM users');
+        res.json(result[0]);
+
+    }catch(error){
+        console.log('error', error.message);
+        res.status(500).json({error: 'Error fetching users'});
+    }
+
+})
+*/
+>>>>>>> afcc38b (update docker)
 
 /*
 GET /users แสดงข้อมูล get users ทั้งหมด
@@ -35,8 +96,14 @@ DELETE /users/:id ลบข้อมูล user ที่ต้องการ�
 */ 
 
 //ใช้แสดงuser ทั้งหมด
+<<<<<<< HEAD
 app.get('/users', (req, res) => {
     res.json(users);
+=======
+app.get('/users', async(req, res) => {
+    const result = await conn.query('SELECT * FROM users');
+    res.json(result[0]);
+>>>>>>> afcc38b (update docker)
 })
 
 
@@ -48,8 +115,14 @@ app.get('/test', (req, res) => {  /* ('/ ชื่อpath ') */
     res.json(user);
 })
 
+<<<<<<< HEAD
 //สร้าง path แสดง /user ใช้แสดงข้อมูล USER ใหม่
 app.post('/user', (req, res) => {
+=======
+
+//สร้าง path แสดง /user ใช้แสดงข้อมูล USER ใหม่
+/*app.post('/user', (req, res) => {
+>>>>>>> afcc38b (update docker)
     let user = req.body;
     user.id = counter;
     counter += 1;
@@ -59,21 +132,58 @@ app.post('/user', (req, res) => {
         user: user
     });
 })
+<<<<<<< HEAD
 
 //path = put ใช้แก้ไขข้อมูล user โดยใช้ id เป็นตัวกำหนด
 app.put('/user/:id', (req, res) => {
+=======
+*/
+app.post('/users', async (req, res) => {
+    let user = req.body;
+    const result = await conn.query('INSERT INTO users SET ?', user);
+    console.log('result', result);
+    res.json({
+        message: 'User created',
+        data: result[0]
+    })
+});
+
+app.get('/users/:id', (req, res) => {
+    let id = req.params.id;
+    //ค้นหา user หรือ index ที่ต้องการดึงข้อมูล
+    let selectedIndex = users.findIndex(user => user.id == id);
+
+    res.json(users[selectedIndex]);
+});
+
+
+//path = put ใช้แก้ไขข้อมูล user โดยใช้ id เป็นตัวกำหนด
+app.put('/users/:id', (req, res) => {
+>>>>>>> afcc38b (update docker)
     let id = req.params.id;
     let updateUser = req.body;
     // หา user จาก id ที่รับมา
     let selectedIndex = users.findIndex(user => user.id == id);
     
     // แก้ไขข้อมูล user ที่หาเจอ
+<<<<<<< HEAD
     if (updateUser.firstname) {
         users[selectedIndex].firstname = updateUser.firstname;
     }
     if (updateUser.lastname) {
         users[selectedIndex].lastname = updateUser.lastname;
     }
+=======
+    //if (updateUser.firstname) {
+    users[selectedIndex].firstname = updateUser.firstname || users[selectedIndex].firstname;
+    //}
+    //if (updateUser.lastname) {
+    users[selectedIndex].lastname = updateUser.lastname || users[selectedIndex].lastname;
+    //}
+    users[selectedIndex].age = updateUser.age || users[selectedIndex].age;
+    users[selectedIndex].gender = updateUser.dender || users[selectedIndex].gendernode;
+
+>>>>>>> afcc38b (update docker)
 
     res.json({
         message: 'User updated successfully',
@@ -99,6 +209,13 @@ app.put('/user/:id', (req, res) => {
 
 
 
+<<<<<<< HEAD
 app.listen(port, (req, res) => {
      console.log('Http Server is running on port', + port);
  });
+=======
+app.listen(port, async (req, res) => {
+    await initMysql();
+    console.log('Http Server is running on port', + port);
+});
+>>>>>>> afcc38b (update docker)
