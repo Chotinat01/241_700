@@ -18,14 +18,10 @@ server.listen(port, host, () => {
 const express = require('express');
 const app = express();
 <<<<<<< HEAD
-<<<<<<< HEAD
 const bodyParser = require('body-parser');
 
 =======
 const mysql = require('mysql');
-=======
-const mysql = require('mysql2/promise');
->>>>>>> 1556140 (css update)
 const bodyParser = require('body-parser');
 >>>>>>> afcc38b (update docker)
 const port = 8000;
