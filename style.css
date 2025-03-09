@@ -53,6 +53,23 @@ body {
     height: 40px;
 }
 
+.message {
+    margin-buttom: 20px;
+    padding: 10px;
+    background-color: lightgray;
+    display: none;
+}
+
+.message.success {
+    background-color: lightgreen;
+    display: block;
+}
+
+.message.danger {
+    background-color: lightcoral;
+    display: block;
+}
+
 .buttom:hover {
     background-color: yellow;
 }

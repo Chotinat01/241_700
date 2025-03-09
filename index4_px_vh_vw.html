@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-    <!-- form-->
 
     <div class="container">
         <div id="register">
@@ -34,21 +33,21 @@
             <div class="header-form">เพศ</div>
             <div class="flex">
                 <div>
-                    <input name="gender" type="radio"> ชาย
+                    <input name="gender" type="radio" value="ชาย"> ชาย
                 </div>
                 <div>
-                    <input name="gender" type="radio"> หญิง
+                    <input name="gender" type="radio" value="หญิง"> หญิง
                 </div>
             
                 <div>
-                    <input name="gender" type="radio"> อื่นๆ
+                    <input name="gender" type="radio" value="อื่นๆ"> อื่นๆ
                 </div>
             </div>
         </div>
 
         <div class="form-input">
-            งานอดิเรก
-            <div>
+            <div class="header-form">งานอดิเรก</div>           
+             <div>
                 <input name="interest" type="checkbox" value="อ่านหนังสือ"> อ่านหนังสือ
             </div>
             <div>
@@ -64,13 +63,16 @@
             <textarea name="description"></textarea>
         </div>
 
+        <div id= message class="message"></div>
+
         <div class="center">
-            <button onclick="SubmitData()" class="buttom">ส่งข่อมูล</button>
+            <button onclick="submitData()" class="buttom">ส่งข่อมูล</button>
         </div>
     </div>
     
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script src="index.js"></script>
-
-  
+    
+    
 </body>
 </html>
