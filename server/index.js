@@ -25,26 +25,27 @@ const initMySQL = async () => {
 const validateData = (userData) => {
     let errors = []
 
-    if (userData.firstName) {
+    if (!userData.firstName) {
         errors.push('กรุณากรอกชื่อ')
     }
-    if (userData.lastName) {
+    if (!userData.lastName) {
         errors.push('กรุณากรอกนามสกุล')
     }
-    if (userData.age) {
+    if (!userData.age) {
         errors.push('กรุณากรอกอายุ')
     }
-    if (userData.gender){
+    if (!userData.gender){
         errors.push('กรุณาเลือกเพศ')
     }
-    if (userData.interest) {
+    if (!userData.interest) {
         errors.push('กรุณาเลือกความสนใจ')
     }
-    if (userData.description) {
+    if (!userData.description) {
         errors.push('กรุณากรอกคำอธิบาย')
     }
     return errors;
 }
+
 
 
  
@@ -61,7 +62,7 @@ app.post('/users', async (req, res) => {
         let user = req.body;
         const errors = validateData(user);
         if(errors.length > 0){
-            throw { statusCode: 400, 
+            throw {  
                 message: 'กรุณากรอกข้อมูลให้ครบถ้วน', 
                 errors: errors 
             }
@@ -76,7 +77,7 @@ app.post('/users', async (req, res) => {
         const errors = error.errors || []
         console.error('error message ', error.message)
         res.status(500).json({
-            message: 'errorMessage',
+            message: errorMessage,
             errors: errors
         })
     }
