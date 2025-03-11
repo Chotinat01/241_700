@@ -12,7 +12,7 @@ body {
 }
 
 .container {
-    width: 500;
+    width: 500px;
     max-width: 640px;
     margin-left: auto;
     margin-right: auto;
@@ -21,15 +21,18 @@ body {
     box-sizing: border-box;
 }
 
+
 .header { //หัวข้อ Register
     font-size: 50px;
     text-align: center;
     margin-bottom: 20px;
-    font-family: "Audiowide", sans-serif; // front พิเศษ เพิ่มlinkที่ head index4 บรรทัด8
+    font-family: "Audiowide", sans-serif; // front พิเศษ เพิ่มlinkที่ head index4 
+
 }
 
 .header-form {
     width: 100px;
+    
 }
 
 .flex {
@@ -38,6 +41,7 @@ body {
 
 .form-input {
     margin-bottom: 10px;
+    
 }
 
 .input.form, textarea {
@@ -75,6 +79,9 @@ body {
 
 .buttom:hover {
     background-color: pink;
+}
+.buttom:active{
+    transform: translateY(4px)
 }
 
 .ust{
