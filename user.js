@@ -5,22 +5,47 @@ window.onload = async () => {
 }
 
 const loadData = async () => {
+    
     console.log('user page loaded')
     //1. load user ทั้งหมด จาก api ที่เตรียมไว้
     const response = await axios.get(`${BASE_URL}/users`);
 
     console.log(response.data);
+    
 
     
     //2. นำ user ทั้งหมด โหลดกลับเข้าไปใน html (แสดงในรูป html)
     const userDOM = document.getElementById('user');
     let htmlData = '<div>'
+
+
+
     for (let i = 0; i < response.data.length; i++) {
         let user = response.data[i];
+        
+        
         htmlData += `<div>
-        ${user.id} ${user.firstname} ${user.lastname}
-        <a href = 'index4_px_vh_vw.html?id=${user.id}'><button>Edit</button></a> 
-        <button class ="delete" data-id = '${user.id}'>Delete</button>
+        
+        
+        <table>
+            
+            
+            <td width=5%"> ${user.id} </td>
+            <td width="20%"> ${user.firstname} </td>
+            <td width="20%">${user.lastname}</td>
+            <td width="10%">${user.age}</td>
+            <td width="10%">${user.gender}</td>
+            <td width="10%">
+                <a href = 'index4_px_vh_vw.html?id=${user.id}'>
+                    <button class="buttom">Edit</button>
+                </a>
+            </td>
+            <td width="10%">
+                <button class ="delete" data-id = '${user.id}'>Delete</button>
+            </td>
+
+            
+        </table>
         </div>`
     }
 
@@ -42,4 +67,5 @@ const loadData = async () => {
             }
         })
     } // ลบเสร็จ ก็จะกลับไปโหลดข้อมูลใหม่ ที่ข้อ1.
+    
 }

@@ -1,6 +1,7 @@
 /* ส่วนนี้ CSS */
 /* ใช้สำหรับแต่ง (id class) */
 /* index4 */
+
 @font-face {
     font-family: 'Kanit';
     src: url(./Kanit/Kanit-Regular.ttf);
@@ -11,19 +12,20 @@ body {
 }
 
 .container {
-    width: 400px;
+    width: 500;
     max-width: 640px;
     margin-left: auto;
     margin-right: auto;
-    background-color: azure;
+    background-color: Ivory;
     padding: 20px;
     box-sizing: border-box;
 }
 
-.header {
-    font-size: 30px;
+.header { //หัวข้อ Register
+    font-size: 50px;
     text-align: center;
     margin-bottom: 20px;
+    font-family: "Audiowide", sans-serif; // front พิเศษ เพิ่มlinkที่ head index4 บรรทัด8
 }
 
 .header-form {
@@ -51,6 +53,7 @@ body {
     border: 0;
     width: 100%;
     height: 40px;
+    cursor: pointer; /* เปลี่ยนเมาส์เป็นรูปมือ */
 }
 
 .message {
@@ -71,7 +74,12 @@ body {
 }
 
 .buttom:hover {
-    background-color: yellow;
+    background-color: pink;
+}
+
+.ust{
+    text-align: right;
+    padding-right: 5px;
 }
 
 @media screen and (max-width: 762px) {
