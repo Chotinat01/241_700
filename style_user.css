@@ -17,6 +17,7 @@ body {
     background-color: Ivory;
     padding: 20px;
     box-sizing: border-box;
+    
 }
 
 .header {
@@ -26,21 +27,28 @@ body {
     font-family: "Audiowide", sans-serif; 
     background-color: red;
 }
-.table {
-    
-    width: 100%;
+table {
     border-collapse: collapse;
-}
-.th, td {
-    border: 1px solid black; // เส้นตาราง ตามด้วยสี
-    padding: 10px;
+    width: 100%;
+  }
+  
+  th, td {
     text-align: center;
-}
+    padding: 8px;
+  }
+  
+    tr:nth-child(even){background-color: #f2f2f2}
+  
+  th {
+    background-color: #04AA6D;
+    color: white;
+  }
 
 .buttom {
     padding: 5px 10px;
     margin: 2px;
     cursor: pointer; // เอาเม้าไปวางแล้วเปลี่ยนเป็นรูปมือ
+
 }
 .btr{
     text-align: left;

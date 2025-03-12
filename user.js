@@ -18,27 +18,33 @@ window.onload = async () => {
         const userDOM = document.getElementById('user');
         
         let htmlData = '<div>'
-       
+            htmlData = '<table>'
         for (let i = 0; i < response.data.length; i++) {
             let user = response.data[i];
             htmlData += `<div>
-            <table>
-                <td width=5%")> ${user.id} </td>
-                <td width="20%"> ${user.firstname} </td>
-                <td width="20%">${user.lastname}</td>
-                <td width="10%">${user.age}</td>
-                <td width="10%">${user.gender}</td>
-                <td width="10%">
-                    <a href = 'index4_px_vh_vw.html?id=${user.id}'>
-                        <button class="buttom">Edit</button>
-                    </a>
-                </td>
-                <td width="10%">
+            
+            
+                <tr>
+                    <td> ${user.id} </td>
+                    <td> ${user.firstname} </td>
+                    <td>${user.lastname}</td>
+                    <td>${user.age}</td>
+                    <td>${user.gender}</td>
+                    <td>
+                        <a href = 'index4_px_vh_vw.html?id=${user.id}'>
+                            <button class="buttom">Edit</button>
+                        </a>
+                    </td>
+                    <td>
                     <button class ="delete" data-id = '${user.id}'>Delete</button>
-                </td>
-            </table>
+                    </td>
+                </tr>
+            
+            
+            
             </div>`
         }
+        htmlData += '</table>'
         htmlData += `</div>`
         userDOM.innerHTML = htmlData;
 
