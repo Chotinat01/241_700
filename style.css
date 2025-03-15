@@ -9,7 +9,7 @@
 
 body {
     font-family: 'Kanit';
-    background-color: #FFCC99;
+    background-color: black;
 }
 
 .container {
@@ -20,7 +20,7 @@ body {
     background-color: white;
     padding: 20px;
     box-sizing: border-box;
-    box-shadow: 10px 10px 5px lightblue;
+    box-shadow: 10px 10px 5px orange;
     border-radius: 20px;
     
 }
@@ -30,11 +30,13 @@ body {
     font-size: 50px;
     text-align: center;
     margin-bottom: 20px;
+    background: linear-gradient(to right, black 60%, orange 40%); /* เปลี่ยนสีจากซ้ายไปขวา */  
     font-family: "Audiowide", sans-serif; // front พิเศษ เพิ่มlinkที่ head index4 
+    
 }
 div.header{
     font-size: 50px;
-    background-color: red;
+//background-color: orange;
     border-radius: 16px;
 }
 
@@ -95,20 +97,58 @@ div.header{
     transform: translateY(4px)
 }
 
-.ust{
-    text-align: right;
-    padding-right: 5px;
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     margin-top: 20px;
 }
-.highlight {
-    background-color: white;
-    display: inline-block;
-    width: 200px;
-    text-align: center;
-
+a:hover{
+    background-color: red; 
+    transform: scale(1.05);
 }
 
+.back-button {
+    position: relative;
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
 
+.tooltip {
+    position: absolute;
+    top: 50%;
+    left: 60px; /* ข้อความจะอยู่ขวาของปุ่ม */
+    transform: translateY(-50%);
+    background-color: black;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.back-button:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
 
 @media screen and (max-width: 762px) {
     .flex {

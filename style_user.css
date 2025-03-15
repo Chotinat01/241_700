@@ -50,14 +50,25 @@ th {
     cursor: pointer; // เอาเม้าไปวางแล้วเปลี่ยนเป็นรูปมือ
 
 }
-.btr{
+.btr {
     display: inline-block;
-    width: 150px;
-    height: 50px;
+    padding: 10px 20px;
+    background-color: #007bff; /* สีน้ำเงิน */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     margin-top: 20px;
-    background-color: #33CC66;
-    border-radius: 15px;
-    justify-content: center; /* จัดให้อยู่ตรงกลางแนวนอน */
-    align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
 }
 
+.btr:hover {
+    background-color: #0056b3; /* สีน้ำเงินเข้มขึ้น */
+    transform: scale(1.05);
+}
+
+.btr:active {
+    background-color: #003d80; /* สีเข้มขึ้นเมื่อกด */
+    transform: scale(0.95);
+}
