@@ -17,12 +17,15 @@ npm i nodemon
 npx nodemon node index.js // 
 ctrl+C
 npm i body-parser
-<<<<<<< HEAD
+
+
 npx nodemon node index.js
-=======
 npx nodemon node index.js
 
 npm i mysql2
 docker-compose up -d
 docker-compose  -a
->>>>>>> afcc38b (update docker)
+
+
+
+mk dr

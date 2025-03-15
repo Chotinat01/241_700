@@ -9,11 +9,11 @@
 
 body {
     font-family: 'Kanit';
-    background-color: #303030;
+    background-color: #FFCC99;
 }
 
 .container {
-    width: 500px;
+    width: 600px;
     max-width: 640px;
     margin-left: auto;
     margin-right: auto;
@@ -21,6 +21,8 @@ body {
     padding: 20px;
     box-sizing: border-box;
     box-shadow: 10px 10px 5px lightblue;
+    border-radius: 20px;
+    
 }
 
 
@@ -29,6 +31,11 @@ body {
     text-align: center;
     margin-bottom: 20px;
     font-family: "Audiowide", sans-serif; // front พิเศษ เพิ่มlinkที่ head index4 
+}
+div.header{
+    font-size: 50px;
+    background-color: red;
+    border-radius: 16px;
 }
 
 
@@ -49,6 +56,7 @@ body {
 .input.form, textarea {
     border: 1px solid #ccc;
     width: 100%;
+    
 }
 
 .center {
@@ -60,6 +68,7 @@ body {
     width: 100%;
     height: 40px;
     cursor: pointer; /* เปลี่ยนเมาส์เป็นรูปมือ */
+    border-radius: 16px;
 }
 
 .message {
@@ -89,8 +98,16 @@ body {
 .ust{
     text-align: right;
     padding-right: 5px;
-    
+    margin-top: 20px;
 }
+.highlight {
+    background-color: white;
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+
+}
+
 
 
 @media screen and (max-width: 762px) {

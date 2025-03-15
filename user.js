@@ -19,6 +19,9 @@ window.onload = async () => {
         
         let htmlData = '<div>'
             htmlData = '<table>'
+    
+            
+            
         for (let i = 0; i < response.data.length; i++) {
             let user = response.data[i];
             htmlData += `<div>
