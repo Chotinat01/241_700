@@ -37,7 +37,10 @@ table {
     padding: 8px;
   }
   
-tr:nth-child(even){background-color: #F5F5F5}
+tr:nth-child(even){
+    background-color: #F5F5F5
+    color: 
+}
   
 th {
     background-color: #04AA6D;

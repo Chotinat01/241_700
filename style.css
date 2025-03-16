@@ -9,8 +9,8 @@
 
 body {
     font-family: 'Kanit';
-    background-color: black;
-    background: url(background2.gif);
+    //background-color: black;
+    background: url(background3.gif);
     background-size: cover;
 }
 
