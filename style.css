@@ -99,45 +99,41 @@ div.header{
     transform: translateY(4px)
 }
 
-a {
-    display: inline-block;
-    padding: 10px 20px;
-    //background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-a:hover{
-    background-color: orange; 
-    transform: scale(1.05);
+.boxbut {
+    display: flex;
+    justify-content: flex-end; /* จัดให้ไปทางขวา */
+    align-items: flex-end; /* จัดให้ไปด้านล่าง */
+    margin-top: 20px;
 }
 
 .go-button {
     position: relative;
-    display: inline-block;
-    background-color: #007bff;
-    color: white;
+    background-color: white;
+    color: black;
     border: none;
     padding: 10px;
-    border-radius: 50%;
+    border-radius: 30%;
     cursor: pointer;
     font-size: 30px;
     width: 60px;
     height: 60px;
     text-align: center;
     transition: background-color 0.3s ease;
-    margin-top: 20px;
 }
-
+.go-button: hover{
+    background-color: black; 
+    
+}
+.go-button:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
 .tooltip {
     position: absolute;
     top: 50%;
-    left: 60px; /* ข้อความจะอยู่ขวาของปุ่ม */
+    right: 60px;  /* ข้อความจะอยู่ขวาของปุ่ม */
     transform: translateY(-50%);
-    background-color: black;
+    background-color: orange;
     color: white;
     padding: 8px 12px;
     border-radius: 5px;
@@ -145,12 +141,27 @@ a:hover{
     white-space: nowrap;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
-.go-button:hover .tooltip {
-    opacity: 1;
-    visibility: visible;
+
+
+.ggg {
+    display: inline-block;
+    padding: 10px 20px;
+    //background-color: #007bff;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
+.ggg:hover{
+    background-color: black;
+    color: white; 
+    transform: scale(1.05);
+}
+
 
 @media screen and (max-width: 762px) {
     .flex {

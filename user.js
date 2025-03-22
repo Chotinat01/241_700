@@ -1,5 +1,6 @@
 const BASE_URL ='http://localhost:8000';
 
+
 window.onload = async () => {
     await loadData();
 }
@@ -18,8 +19,19 @@ window.onload = async () => {
         const userDOM = document.getElementById('user');
         
         let htmlData = '<div>'
-            htmlData = '<table>'
-    
+            htmlData +=`<table>
+         
+            <tr>
+               <th class='balance'>ID</th>
+               <th class='balance'>Name</th>
+               <th class='balance'>Action</th>
+               <th class='balance'>Age</th>
+               <th class='balance'>Gender</th>
+               <th class ="balance" colspan="2">Modify</th>
+            </tr>
+         `  
+            
+     
             
             
         for (let i = 0; i < response.data.length; i++) {
@@ -27,7 +39,7 @@ window.onload = async () => {
             htmlData += `<div>
             
             
-                <tr>
+                <tr >
                     <td> ${user.id} </td>
                     <td> ${user.firstname} </td>
                     <td>${user.lastname}</td>
@@ -35,7 +47,7 @@ window.onload = async () => {
                     <td>${user.gender}</td>
                     <td>
                         <a href = 'index4_px_vh_vw.html?id=${user.id}'>
-                            <button class="buttom">Edit</button>
+                            <button class="buttom-edit">Edit</button>
                         </a>
                     </td>
                     <td>
